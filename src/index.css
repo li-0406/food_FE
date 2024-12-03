@@ -1,13 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+:root {
+  --color-blue1: #e9f1fe;
+  --color-blue2: #c4d7ed;
+  --color-blue3: #abc8e2;
+  --color-blue4: #375d81;
+  --color-blue5: #183152;
+
+  --color-red1: #ffaeaa;
+  --color-red2: #ed6f69;
+
+  --color-bg: #fff6ea;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
+  font-family: "Noto Sans TC", sans-serif;
+  letter-spacing: 1.25px;
+  background: var(--color-bg);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+textarea:focus-visible {
+  outline: none;
+}
+
+select:focus-visible {
+  outline: none;
+}
+
+/* 圖片通用 */
+.pic-auto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* 限制最大寬度 !> 1200px, 搭配 px-5 使用 */
+.page-max-w {
+  @apply mx-auto w-full max-w-[1200px];
+}
+
+/* hover 效果 */
+.hover-auto {
+  @apply transform duration-200;
 }
