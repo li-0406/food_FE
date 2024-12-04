@@ -30,8 +30,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 input:focus-visible {
@@ -63,3 +62,285 @@ select:focus-visible {
 .hover-auto {
   @apply transform duration-200;
 }
+
+/* ? 頁面通用 */
+.cus-border {
+  @apply border border-blue4;
+}
+
+.cus-border-b {
+  @apply border-b border-blue4;
+}
+
+.cus-border-t {
+  @apply border-t border-blue4;
+}
+
+.cus-border-r {
+  @apply border-r border-blue4;
+}
+
+.cus-border-l {
+  @apply border-l border-blue4;
+}
+
+.cus-border-y {
+  @apply border-y border-blue4;
+}
+
+.cus-line-row {
+  @apply border-blue4;
+}
+
+/* ? text */
+
+.cus-page-title {
+  @apply mb-5 text-[18px] font-semibold text-blue5;
+}
+
+.cus-title-border-left {
+  @apply mb-3 border-l-2 border-blue4 px-3 py-[2px] text-[14px] font-medium text-blue4 sm:text-base;
+}
+
+.cus-title-border-left-no {
+  @apply border-l-2 border-blue4 px-3 py-[2px] text-[14px] font-medium text-blue4 sm:text-base;
+}
+
+.cus-title-border-left-err {
+  @apply mb-3 border-l-2 border-red2 px-3 py-[2px] text-[14px] font-medium text-red2 sm:text-base;
+}
+
+.cus-intro {
+  @apply px-3 py-5 text-blue4 md:p-5;
+}
+
+/* ? padding */
+.cus-block-padding {
+  @apply px-3 py-5 md:p-5;
+}
+
+/* ? label & input */
+.cus-col-1 {
+  @apply flex flex-col gap-1;
+}
+
+.cus-col-3 {
+  @apply flex flex-col gap-3;
+}
+
+.cus-label {
+  @apply text-[14px] font-medium sm:text-base;
+}
+
+.cus-input {
+  @apply rounded-md border border-slate-200 bg-transparent px-3 py-[10px] text-[14px] sm:text-base;
+}
+
+.cus-input-blue4 {
+  @apply rounded-md border border-blue4 bg-transparent px-3 py-[10px] text-[14px] sm:text-base;
+}
+
+.cus-input-note {
+  @apply text-[14px] text-slate-400;
+}
+
+/* ? radio 單選框 */
+.cus-radio-row {
+  @apply flex flex-col gap-[6px] lg:flex-row lg:items-center lg:gap-5;
+}
+
+.cus-label-radio {
+  @apply flex cursor-pointer items-center gap-2 text-[14px] font-medium sm:text-base;
+}
+
+/* 隱藏原始的 radio button */
+.cus-label-radio input[type="radio"] {
+  display: none;
+}
+
+/* 創建一個新的 radio button */
+.cus-label-radio input[type="radio"] + span {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  min-height: 18px;
+  border: 1px solid var(--color-blue4);
+  border-radius: 50%;
+}
+
+/* 當 radio button 被選中時，改變邊框顏色 */
+.cus-label-radio input[type="radio"]:checked + span {
+  @apply border-blue4;
+}
+
+/* 當 radio button 被選中時，創建一個新的內部點 */
+.cus-label-radio input[type="radio"]:checked + span:after {
+  @apply bg-blue4;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ? btn 按鈕 */
+.cus-btn-primary {
+  @apply rounded-md bg-blue4 px-4 py-[10px] text-[14px] font-medium text-blue1 sm:text-base;
+}
+
+.cus-btn-primary:disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+.cus-btn-primary-outline {
+  @apply rounded-md border border-blue4 px-4 py-[10px] text-[14px] font-medium text-blue4 sm:text-base;
+}
+
+/* ? table */
+.cus-table {
+  @apply w-full overflow-hidden rounded-lg border border-slate-200 text-[14px] sm:text-base;
+}
+
+.cus-table-row {
+  @apply border-b border-slate-200;
+}
+
+.cus-table-rows:not(:last-child) {
+  @apply border-b border-slate-200;
+}
+
+.cus-table-th {
+  @apply p-3 font-medium text-blue4;
+}
+
+/* .cus-table-body {
+  @apply border-b border-slate-200;
+} */
+
+.cus-table-td {
+  @apply p-3;
+}
+
+/* todo hrrrrrr */
+
+/* hover 常用的 hover:bg-[#00000017] */
+.hover-opacity {
+  @apply transform duration-200 hover:opacity-80;
+}
+
+/* ? btn 按鈕 */
+.btn-black-outline {
+  @apply text-nowrap border-2 border-black px-8 py-3 text-[24px] text-black hover:bg-black hover:text-white md:px-20 md:py-4;
+}
+
+.btn-black-outline-small {
+  @apply text-nowrap border-2 border-black px-2 py-3 text-[20px] text-black hover:bg-black hover:text-white md:px-4;
+}
+
+.btn-black-outline-md {
+  @apply text-nowrap border-2 border-black px-2 py-3 text-[20px] text-black hover:bg-black hover:text-white md:px-8;
+}
+
+/* ? 彈窗 Modal z-100 */
+.modal-bg {
+  @apply fixed inset-0 z-[100] flex items-center justify-center bg-bg bg-opacity-70 p-5;
+}
+
+.modal-box-bg {
+  @apply relative max-h-full w-full max-w-[500px] rounded-md border border-blue4 bg-bg px-3 pb-5 pt-3 md:min-w-[500px];
+}
+
+/* .modal-box-black {
+  @apply relative max-h-full w-full max-w-[740px] overflow-y-auto border-[5px] border-white bg-black p-4 pt-12 text-white md:min-w-[740px] md:p-[30px];
+} */
+
+/* .modal-top {
+  @apply mb-12 flex items-center justify-between;
+}
+
+.modal-title {
+  @apply text-[24px] font-medium;
+}
+
+.modal-footer {
+  @apply mt-[30px] flex justify-center gap-4;
+} */
+
+/* ? 確認框 checkbox */
+/* 隱藏原生的 checkbox */
+/* input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+} */
+
+/* 創建一個新的方塊來代替 checkbox */
+/* input[type='checkbox']:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-radius: 3px;
+} */
+
+/* 當 checkbox 被選中時，改變顏色 */
+/* input[type='checkbox']:checked:before {
+  @apply border-tag-red bg-red;
+} */
+
+/* 當 checkbox 被選中時，顯示一個勾勾 */
+/* input[type='checkbox']:checked:after {
+  content: '';
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  width: 8px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 2.5px 2.5px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 20;
+} */
+
+/* ? 輸入框 input */
+.flex-col-1 {
+  @apply flex flex-col flex-wrap gap-1;
+}
+
+.input-label {
+  @apply text-[18px] font-bold;
+}
+
+/* .input-label-mark {
+  @apply text-red;
+} */
+
+.input-bottom-line {
+  @apply border-b-[1px] border-black px-[10px] py-2;
+}
+
+/* .input-note-red {
+  @apply text-red text-[14px];
+} */
+
+/* ? 下拉選單 select */
+/* .select {
+  @apply relative w-full border border-black px-3 py-2 text-[20px];
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('~/assets/images/arrow-down.svg') no-repeat right center;
+  background-size: 12px;
+  background-position: calc(100% - 12px) center;
+} */

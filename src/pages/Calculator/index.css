@@ -1,0 +1,38 @@
+.calculator-tab {
+  @apply w-[140px] min-w-[140px] py-[10px] text-center text-[14px] text-blue4 opacity-80;
+  border-left: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-radius: 6px 6px 0 0;
+}
+
+.calculator-tab-active {
+  @apply font-bold opacity-100;
+  border-left: 1px solid var(--color-blue4);
+  border-top: 1px solid var(--color-blue4);
+  border-right: 1px solid var(--color-blue4);
+}
+
+.overflow-x-auto {
+  /* 隱藏滾動條的通用方法 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  /* 對於 Webkit (Chrome, Safari, etc.) */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* toggle */
+.cus-toggle-tab {
+  @apply flex gap-2 rounded-md border border-blue4 p-1 text-[14px];
+}
+
+.cus-toggle-tab-item {
+  @apply rounded px-3 py-[6px] text-blue4;
+}
+
+.cus-toggle-tab-item-active {
+  @apply bg-blue4 text-blue1;
+}
